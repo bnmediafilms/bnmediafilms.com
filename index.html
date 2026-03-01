@@ -9,123 +9,118 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg"/>
 <meta property="og:url" content="https://www.bnmediafilms.com"/>
 <meta property="og:type" content="website"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg"/>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Open Sans',sans-serif;background:#fff;color:#1a1a1a;padding-bottom:56px}
 a{text-decoration:none;color:inherit}
 
-/* HEADER */
-#topbar{background:#1a1a2e;padding:0 5%;display:flex;align-items:center;justify-content:space-between;min-height:80px;position:sticky;top:0;z-index:999}
+/* NAV */
+#topbar{background:#1a1a2e;padding:0 5%;display:flex;align-items:center;justify-content:space-between;min-height:80px;position:sticky;top:0;z-index:9000}
 .logo-area{display:flex;flex-direction:column;gap:2px}
 .logo-area img{height:52px;object-fit:contain;mix-blend-mode:screen}
 .tagline{font-family:'Raleway',sans-serif;font-size:0.68rem;color:rgba(255,255,255,0.55);letter-spacing:0.12em;text-transform:lowercase}
-nav{display:flex;align-items:center;gap:28px}
-nav a{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.75);transition:color 0.2s}
-nav a:hover,nav a.active{color:#fff}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{display:block;width:24px;height:2px;background:#fff;transition:all 0.3s}
-
-/* MOBILE NAV */
-@media(max-width:768px){
-  nav{display:none;position:fixed;top:80px;left:0;right:0;background:#1a1a2e;flex-direction:column;padding:24px 5%;gap:20px;z-index:998;border-top:1px solid rgba(255,255,255,0.1)}
-  nav.open{display:flex}
-  .hamburger{display:flex}
-  #hero{width:100%;border-radius:0;margin-top:0}
-  .contact-grid{grid-template-columns:1fr}
-  .about-prod-grid{grid-template-columns:repeat(2,1fr)}
-}
+#mainNav{display:flex;align-items:center;gap:28px}
+#mainNav a{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.75)}
+#mainNav a:hover{color:#fff}
+#hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+#hamburger span{display:block;width:24px;height:2px;background:#fff}
 
 /* HERO */
-#hero{width:96%;margin:20px auto 0;border-radius:18px;overflow:hidden;position:relative;height:88vh;min-height:480px;background:#0d0d1f}
-.hslide{position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;pointer-events:none}
-.hslide.active{opacity:1;pointer-events:auto}
-.hslide-bg{position:absolute;inset:0;background-size:cover;background-position:center}
-.hslide-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.6))}
-.hslide-content{position:absolute;bottom:10%;left:6%;z-index:2;color:#fff}
-.slide-tag{font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.8;display:block;margin-bottom:10px}
-.slide-title{font-family:'Raleway',sans-serif;font-size:clamp(1.6rem,4vw,3rem);font-weight:900;line-height:1.2;margin-bottom:22px}
-.slide-btn{display:inline-block;background:#fff;color:#1a1a2e;font-family:'Raleway',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:12px 28px}
-.slide-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.2);color:#fff;border:none;width:44px;height:44px;font-size:1.2rem;cursor:pointer;z-index:10;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.slide-arrow:hover{background:rgba(255,255,255,0.4)}
-.sprev{left:16px}.snext{right:16px}
-.slide-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;border:none;padding:0;transition:background 0.3s}
-.dot.active{background:#fff}
+#hero{width:96%;margin:20px auto 0;border-radius:18px;overflow:hidden;position:relative;height:88vh;min-height:480px;background:#111}
+.hslide{position:absolute;inset:0;opacity:0;transition:opacity 0.8s}
+.hslide.on{opacity:1}
+.hbg{position:absolute;inset:0;background-size:cover;background-position:center}
+.hov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.65))}
+.htxt{position:absolute;bottom:10%;left:6%;z-index:2;color:#fff}
+.htag{font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.8;display:block;margin-bottom:10px}
+.htitle{font-family:'Raleway',sans-serif;font-size:clamp(1.6rem,4vw,3rem);font-weight:900;line-height:1.2;margin-bottom:22px}
+.hbtn{display:inline-block;background:#fff;color:#1a1a2e;font-family:'Raleway',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:12px 28px}
+.harr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.2);color:#fff;border:none;width:44px;height:44px;font-size:1.2rem;cursor:pointer;z-index:10;border-radius:50%}
+.harr:hover{background:rgba(255,255,255,0.4)}
+#hprev{left:16px}#hnext{right:16px}
+#hdots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.hdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);border:none;cursor:pointer;padding:0}
+.hdot.on{background:#fff}
 
 /* SECTIONS */
-.section{padding:70px 5%}
-.section-heading{font-family:'Raleway',sans-serif;font-size:1.4rem;font-weight:800;color:#1a1a2e;margin-bottom:40px;padding-bottom:14px;border-bottom:3px solid #1a1a2e}
-.section-bg{background:#f7f7fb}
+.sec{padding:70px 5%}
+.sec-heading{font-family:'Raleway',sans-serif;font-size:1.4rem;font-weight:800;color:#1a1a2e;margin-bottom:40px;padding-bottom:14px;border-bottom:3px solid #1a1a2e}
+.sec-gray{background:#f7f7fb}
 
-/* NEWS */
-.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
-.news-card{border:1px solid #eee;border-radius:8px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;display:block}
-.news-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
-.news-card img{width:100%;height:200px;object-fit:cover;display:block}
-.news-card-body{padding:22px}
-.news-meta{display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap}
-.news-date,.news-read{font-size:0.75rem;color:#888;font-family:'Raleway',sans-serif}
-.news-card-title{font-family:'Raleway',sans-serif;font-size:1rem;font-weight:700;color:#1a1a2e;line-height:1.4;margin-bottom:10px}
-.news-card-excerpt{font-size:0.86rem;color:#555;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:12px}
-.see-more{font-family:'Raleway',sans-serif;font-size:0.8rem;font-weight:700;color:#1a1a2e;border-bottom:2px solid #1a1a2e;padding-bottom:2px}
+/* NEWS CARDS */
+.ngrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
+.ncard{border:1px solid #eee;border-radius:8px;overflow:hidden;display:block;transition:transform 0.25s,box-shadow 0.25s}
+.ncard:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+.ncard img{width:100%;height:200px;object-fit:cover;display:block}
+.ncard-body{padding:22px}
+.nmeta{display:flex;gap:14px;margin-bottom:10px;flex-wrap:wrap}
+.ndate,.nread{font-size:0.75rem;color:#888;font-family:'Raleway',sans-serif}
+.ntitle{font-family:'Raleway',sans-serif;font-size:1rem;font-weight:700;color:#1a1a2e;line-height:1.4;margin-bottom:10px}
+.nexcerpt{font-size:0.86rem;color:#555;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:12px}
+.nmore{font-family:'Raleway',sans-serif;font-size:0.8rem;font-weight:700;color:#1a1a2e;border-bottom:2px solid #1a1a2e;padding-bottom:2px}
 
 /* PRODUCTIONS */
-.pslideshow{position:relative;max-width:360px;margin:0 auto}
-.pslide-wrap{position:relative;width:100%;border-radius:8px;overflow:hidden;min-height:300px;background:#111}
+.pshow{position:relative;max-width:360px;margin:0 auto}
+.pwrap{position:relative;border-radius:8px;overflow:hidden;background:#111}
 .pslide{display:none;position:relative;cursor:pointer}
-.pslide.active{display:block}
+.pslide.on{display:block}
 .pslide img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block}
-.pslide-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.88));padding:40px 18px 18px}
-.pslide-type{display:block;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);font-family:'Raleway',sans-serif;font-weight:600}
-.pslide-title{display:block;font-family:'Raleway',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;margin-top:4px}
-.pslide-watch{display:block;font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:6px}
-.parrow{position:absolute;top:42%;transform:translateY(-50%);background:rgba(0,0,0,0.5);color:#fff;border:none;width:38px;height:38px;cursor:pointer;z-index:10;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem}
-.parrow:hover{background:rgba(0,0,0,0.85)}
-.pprev{left:8px}.pnext{right:8px}
-.pdots{display:flex;justify-content:center;gap:8px;padding:14px 0 0}
-.pdot{width:8px;height:8px;border-radius:50%;background:#ccc;cursor:pointer;border:none;padding:0;transition:background 0.3s}
-.pdot.active{background:#1a1a2e}
+.plabel{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.9));padding:40px 18px 18px}
+.ptype{display:block;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);font-family:'Raleway',sans-serif;font-weight:600}
+.ptitle{display:block;font-family:'Raleway',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;margin-top:4px}
+.pwatch{display:block;font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:6px}
+.parr{position:absolute;top:42%;transform:translateY(-50%);background:rgba(0,0,0,0.55);color:#fff;border:none;width:38px;height:38px;cursor:pointer;z-index:5;border-radius:50%;font-size:1rem}
+.parr:hover{background:rgba(0,0,0,0.9)}
+#pprev{left:8px}#pnext{right:8px}
+#pdots{display:flex;justify-content:center;gap:8px;padding:14px 0 0}
+.pdot{width:8px;height:8px;border-radius:50%;background:#ccc;border:none;cursor:pointer;padding:0}
+.pdot.on{background:#1a1a2e}
 
 /* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
-.contact-info h3{font-family:'Raleway',sans-serif;font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px}
-.contact-info p{font-size:0.9rem;color:#555;line-height:1.7;margin-bottom:24px}
-.form-group{margin-bottom:18px}
-.form-group label{display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#888;margin-bottom:7px;font-family:'Raleway',sans-serif}
-.form-group input,.form-group textarea,.form-group select{width:100%;border:1px solid #ccc;padding:11px 13px;font-family:'Open Sans',sans-serif;font-size:0.88rem;color:#333;outline:none;border-radius:4px;transition:border-color 0.2s}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#1a1a2e}
-.form-group textarea{resize:vertical;min-height:110px}
-.submit-btn{background:#1a1a2e;color:#fff;border:none;padding:13px 32px;font-family:'Raleway',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:4px;width:100%;transition:opacity 0.2s}
-.submit-btn:hover{opacity:0.82}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.cinfo h3{font-family:'Raleway',sans-serif;font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+.cinfo p{font-size:0.9rem;color:#555;line-height:1.7;margin-bottom:24px}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#888;margin-bottom:7px;font-family:'Raleway',sans-serif}
+.fg input,.fg textarea,.fg select{width:100%;border:1px solid #ccc;padding:11px 13px;font-family:'Open Sans',sans-serif;font-size:0.88rem;color:#333;outline:none;border-radius:4px}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:#1a1a2e}
+.fg textarea{resize:vertical;min-height:110px}
+.sbtn{background:#1a1a2e;color:#fff;border:none;padding:13px 32px;font-family:'Raleway',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:4px;width:100%}
 
 /* FAQ */
-.faq-item{border-bottom:1px solid #eee;padding:20px 0}
-.faq-q{font-family:'Raleway',sans-serif;font-size:0.95rem;font-weight:700;color:#1a1a2e;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.faq-q::after{content:'+';font-size:1.3rem;font-weight:300;flex-shrink:0}
-.faq-item.open .faq-q::after{content:'−'}
-.faq-a{display:none;font-size:0.9rem;color:#555;line-height:1.75;padding-top:14px}
-.faq-item.open .faq-a{display:block}
+.fitem{border-bottom:1px solid #eee;padding:20px 0}
+.fq{font-family:'Raleway',sans-serif;font-size:0.95rem;font-weight:700;color:#1a1a2e;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.fq::after{content:'+';font-size:1.3rem;font-weight:300;flex-shrink:0}
+.fitem.open .fq::after{content:'−'}
+.fa{display:none;font-size:0.9rem;color:#555;line-height:1.75;padding-top:14px}
+.fitem.open .fa{display:block}
 
 /* FOOTER */
 footer{background:#1a1a2e;padding:40px 5%}
-.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;margin-bottom:28px}
-.footer-brand img{height:48px;mix-blend-mode:screen;margin-bottom:8px}
-.footer-brand p{font-size:0.78rem;color:rgba(255,255,255,0.45);max-width:220px;line-height:1.6}
-.footer-links h4{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px}
-.footer-links a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:8px;transition:color 0.2s}
-.footer-links a:hover{color:#fff}
-.footer-copy{text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.3);border-top:1px solid rgba(255,255,255,0.08);padding-top:20px}
+.fi{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;margin-bottom:28px}
+.fb img{height:48px;mix-blend-mode:screen;margin-bottom:8px;display:block}
+.fb p{font-size:0.78rem;color:rgba(255,255,255,0.45);max-width:220px;line-height:1.6}
+.fl h4{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px}
+.fl a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:8px}
+.fl a:hover{color:#fff}
+.fc{text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.3);border-top:1px solid rgba(255,255,255,0.08);padding-top:20px}
 
 /* SOCIAL BAR */
-#social-bar{position:fixed;bottom:0;left:0;right:0;z-index:9999;display:flex;height:56px}
-.sb-btn{flex:1;display:flex;align-items:center;justify-content:center;color:#fff;transition:filter 0.2s}
-.sb-btn:hover{filter:brightness(1.2)}
-.sb-btn svg{width:20px;height:20px}
-.sb-fb{background:#1877f2}.sb-ig{background:#833ab4}.sb-yt{background:#ff0000}
-.sb-tk{background:#010101}.sb-wa{background:#25d366}.sb-fb2{background:#1877f2;opacity:0.85}
+#sbar{position:fixed;bottom:0;left:0;right:0;z-index:9999;display:flex;height:56px}
+.sb{flex:1;display:flex;align-items:center;justify-content:center;color:#fff}
+.sb svg{width:20px;height:20px}
+.sfb{background:#1877f2}.sig{background:#833ab4}.syt{background:#ff0000}
+.stk{background:#010101}.swa{background:#25d366}.sfb2{background:#1877f2;opacity:0.85}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  #mainNav{display:none;position:fixed;top:80px;left:0;right:0;background:#1a1a2e;flex-direction:column;padding:24px 5%;gap:20px;z-index:8000;border-top:1px solid rgba(255,255,255,0.1)}
+  #mainNav.open{display:flex}
+  #hamburger{display:flex}
+  #hero{width:100%;border-radius:0;margin-top:0}
+  .cgrid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -136,150 +131,177 @@ footer{background:#1a1a2e;padding:40px 5%}
     <span class="tagline">telling stories through films &amp; series</span>
   </div>
   <nav id="mainNav">
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html">Home</a>
     <a href="news.html">News</a>
     <a href="about.html">About</a>
     <a href="auditions.html">Auditions</a>
     <a href="#contact">Contact Us</a>
     <a href="#faq">FAQ</a>
   </nav>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button id="hamburger"><span></span><span></span><span></span></button>
 </header>
 
-<div id="hero">
-  <div class="hslide active" id="hs0"><div class="hslide-bg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts1.jpeg')"></div><div class="hslide-overlay"></div><div class="hslide-content"><span class="slide-tag">BN Media Films</span><h2 class="slide-title">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="slide-btn">Our Productions</a></div></div>
-<div class="hslide " id="hs1"><div class="hslide-bg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts2.jpeg')"></div><div class="hslide-overlay"></div><div class="hslide-content"><span class="slide-tag">BN Media Films</span><h2 class="slide-title">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="slide-btn">Our Productions</a></div></div>
-<div class="hslide " id="hs2"><div class="hslide-bg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts3.jpeg')"></div><div class="hslide-overlay"></div><div class="hslide-content"><span class="slide-tag">BN Media Films</span><h2 class="slide-title">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="slide-btn">Our Productions</a></div></div>
-<div class="hslide " id="hs3"><div class="hslide-bg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts4.jpeg')"></div><div class="hslide-overlay"></div><div class="hslide-content"><span class="slide-tag">BN Media Films</span><h2 class="slide-title">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="slide-btn">Our Productions</a></div></div>
-<div class="hslide " id="hs4"><div class="hslide-bg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts5.jpeg')"></div><div class="hslide-overlay"></div><div class="hslide-content"><span class="slide-tag">BN Media Films</span><h2 class="slide-title">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="slide-btn">Our Productions</a></div></div>
-<div class="hslide " id="hs5"><div class="hslide-bg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts6.jpeg')"></div><div class="hslide-overlay"></div><div class="hslide-content"><span class="slide-tag">BN Media Films</span><h2 class="slide-title">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="slide-btn">Our Productions</a></div></div>
-<div class="hslide " id="hs6"><div class="hslide-bg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts7.jpeg')"></div><div class="hslide-overlay"></div><div class="hslide-content"><span class="slide-tag">BN Media Films</span><h2 class="slide-title">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="slide-btn">Our Productions</a></div></div>
-<div class="hslide " id="hs7"><div class="hslide-bg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts8.jpeg')"></div><div class="hslide-overlay"></div><div class="hslide-content"><span class="slide-tag">BN Media Films</span><h2 class="slide-title">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="slide-btn">Our Productions</a></div></div>
-
-  <button class="slide-arrow sprev" onclick="hGo(hC-1)">&#8592;</button>
-  <button class="slide-arrow snext" onclick="hGo(hC+1)">&#8594;</button>
-  <div class="slide-dots"><button class="dot active" id="hd0" onclick="hGo(0)"></button><button class="dot " id="hd1" onclick="hGo(1)"></button><button class="dot " id="hd2" onclick="hGo(2)"></button><button class="dot " id="hd3" onclick="hGo(3)"></button><button class="dot " id="hd4" onclick="hGo(4)"></button><button class="dot " id="hd5" onclick="hGo(5)"></button><button class="dot " id="hd6" onclick="hGo(6)"></button><button class="dot " id="hd7" onclick="hGo(7)"></button></div>
+<!-- HERO SLIDESHOW -->
+<div id="hero"><div class="hslide" id="hs0"><div class="hbg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts1.jpeg')"></div><div class="hov"></div><div class="htxt"><span class="htag">BN Media Films</span><h2 class="htitle">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="hbtn">Our Productions</a></div></div>
+<div class="hslide" id="hs1"><div class="hbg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts2.jpeg')"></div><div class="hov"></div><div class="htxt"><span class="htag">BN Media Films</span><h2 class="htitle">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="hbtn">Our Productions</a></div></div>
+<div class="hslide" id="hs2"><div class="hbg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts3.jpeg')"></div><div class="hov"></div><div class="htxt"><span class="htag">BN Media Films</span><h2 class="htitle">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="hbtn">Our Productions</a></div></div>
+<div class="hslide" id="hs3"><div class="hbg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts4.jpeg')"></div><div class="hov"></div><div class="htxt"><span class="htag">BN Media Films</span><h2 class="htitle">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="hbtn">Our Productions</a></div></div>
+<div class="hslide" id="hs4"><div class="hbg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts5.jpeg')"></div><div class="hov"></div><div class="htxt"><span class="htag">BN Media Films</span><h2 class="htitle">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="hbtn">Our Productions</a></div></div>
+<div class="hslide" id="hs5"><div class="hbg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts6.jpeg')"></div><div class="hov"></div><div class="htxt"><span class="htag">BN Media Films</span><h2 class="htitle">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="hbtn">Our Productions</a></div></div>
+<div class="hslide" id="hs6"><div class="hbg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts7.jpeg')"></div><div class="hov"></div><div class="htxt"><span class="htag">BN Media Films</span><h2 class="htitle">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="hbtn">Our Productions</a></div></div>
+<div class="hslide" id="hs7"><div class="hbg" style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts8.jpeg')"></div><div class="hov"></div><div class="htxt"><span class="htag">BN Media Films</span><h2 class="htitle">Telling Stories Through<br>Films &amp; Series</h2><a href="#productions" class="hbtn">Our Productions</a></div></div>
+  <button class="harr" id="hprev">&#8592;</button>
+  <button class="harr" id="hnext">&#8594;</button>
+  <div id="hdots"></div>
 </div>
 
-<div class="section" id="news-preview">
-  <h2 class="section-heading">Featured News</h2>
-  <div class="news-grid">
-    <a href="post-class-of-secrets.html" class="news-card">
+<!-- FEATURED NEWS -->
+<div class="sec" id="news-preview">
+  <h2 class="sec-heading">Featured News</h2>
+  <div class="ngrid">
+    <a href="post-class-of-secrets.html" class="ncard">
       <img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/classofsecrets.jpeg" alt="Class of Secrets">
-      <div class="news-card-body">
-        <div class="news-meta"><span class="news-date">📅 March 1, 2025</span><span class="news-read">🕐 3 min read</span></div>
-        <div class="news-card-title">Missed Episodes 1 to 9 of "Class of Secrets" Season 2? Catch Up</div>
-        <div class="news-card-excerpt">Catch up on all the drama, twists, and secrets of Class of Secrets Season 2 right here.</div>
-        <span class="see-more">See More</span>
+      <div class="ncard-body">
+        <div class="nmeta"><span class="ndate">📅 March 1, 2025</span><span class="nread">🕐 3 min read</span></div>
+        <div class="ntitle">Missed Episodes 1 to 9 of "Class of Secrets" Season 2? Catch Up</div>
+        <div class="nexcerpt">Catch up on all the drama, twists, and secrets of Class of Secrets Season 2 right here.</div>
+        <span class="nmore">See More</span>
       </div>
     </a>
-    <a href="post-partnership.html" class="news-card">
-      <img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg" alt="Partnership" style="object-fit:contain;background:#f0f4ff;">
-      <div class="news-card-body">
-        <div class="news-meta"><span class="news-date">📅 March 1, 2025</span><span class="news-read">🕐 2 min read</span></div>
-        <div class="news-card-title">BN Media Films Announces Strategic Partnership with Patmos Studios</div>
-        <div class="news-card-excerpt">A significant step in our commitment to delivering high-quality storytelling across Nigeria.</div>
-        <span class="see-more">See More</span>
+    <a href="post-partnership.html" class="ncard">
+      <img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg" alt="BN Media Films" style="object-fit:contain;background:#f0f4ff;">
+      <div class="ncard-body">
+        <div class="nmeta"><span class="ndate">📅 March 1, 2025</span><span class="nread">🕐 2 min read</span></div>
+        <div class="ntitle">BN Media Films Announces Strategic Partnership with Patmos Studios</div>
+        <div class="nexcerpt">A significant step in our commitment to delivering high-quality storytelling across Nigeria.</div>
+        <span class="nmore">See More</span>
       </div>
     </a>
   </div>
 </div>
 
-<div class="section section-bg" id="productions">
-  <h2 class="section-heading">Our Productions</h2>
-  <div class="pslideshow">
-    <div class="pslide-wrap">
-      <div class="pslide active" id="ps0" onclick="window.open('https://youtube.com/@bnmediafilms','_blank')"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/filteredwater.jpeg" alt="In Like Filtered Water"><div class="pslide-label"><span class="pslide-type">Series</span><span class="pslide-title">In Like Filtered Water</span><span class="pslide-watch">▶ Watch on YouTube</span></div></div>
-<div class="pslide " id="ps1" onclick="window.open('https://youtube.com/@bnmediafilms','_blank')"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/breakout.jpeg" alt="Breakout"><div class="pslide-label"><span class="pslide-type">Series</span><span class="pslide-title">Breakout</span><span class="pslide-watch">▶ Watch on YouTube</span></div></div>
-<div class="pslide " id="ps2" onclick="window.open('https://youtube.com/@bnmediafilms','_blank')"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/classofsecrets.jpeg" alt="Class of Secrets"><div class="pslide-label"><span class="pslide-type">Series</span><span class="pslide-title">Class of Secrets</span><span class="pslide-watch">▶ Watch on YouTube</span></div></div>
-<div class="pslide " id="ps3" onclick="window.open('https://youtube.com/@bnmediafilms','_blank')"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/notperfectdate.jpeg" alt="Not Perfect Date"><div class="pslide-label"><span class="pslide-type">Series</span><span class="pslide-title">Not Perfect Date</span><span class="pslide-watch">▶ Watch on YouTube</span></div></div>
-<div class="pslide " id="ps4" onclick="window.open('https://youtube.com/@bnmediafilms','_blank')"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/hopealive.jpeg" alt="Hope Alive"><div class="pslide-label"><span class="pslide-type">Film</span><span class="pslide-title">Hope Alive</span><span class="pslide-watch">▶ Watch on YouTube</span></div></div>
-
-      <button class="parrow pprev" onclick="pGo(pC-1)">&#8592;</button>
-      <button class="parrow pnext" onclick="pGo(pC+1)">&#8594;</button>
+<!-- PRODUCTIONS -->
+<div class="sec sec-gray" id="productions">
+  <h2 class="sec-heading">Our Productions</h2>
+  <div class="pshow">
+    <div class="pwrap"><div class="pslide" id="ps0" onclick="window.open('https://youtube.com/@bnmediafilms','_blank')"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/filteredwater.jpeg" alt="In Like Filtered Water"><div class="plabel"><span class="ptype">Series</span><span class="ptitle">In Like Filtered Water</span><span class="pwatch">▶ Watch on YouTube</span></div></div>
+<div class="pslide" id="ps1" onclick="window.open('https://youtube.com/@bnmediafilms','_blank')"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/breakout.jpeg" alt="Breakout"><div class="plabel"><span class="ptype">Series</span><span class="ptitle">Breakout</span><span class="pwatch">▶ Watch on YouTube</span></div></div>
+<div class="pslide" id="ps2" onclick="window.open('https://youtube.com/@bnmediafilms','_blank')"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/classofsecrets.jpeg" alt="Class of Secrets"><div class="plabel"><span class="ptype">Series</span><span class="ptitle">Class of Secrets</span><span class="pwatch">▶ Watch on YouTube</span></div></div>
+<div class="pslide" id="ps3" onclick="window.open('https://youtube.com/@bnmediafilms','_blank')"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/notperfectdate.jpeg" alt="Not Perfect Date"><div class="plabel"><span class="ptype">Series</span><span class="ptitle">Not Perfect Date</span><span class="pwatch">▶ Watch on YouTube</span></div></div>
+<div class="pslide" id="ps4" onclick="window.open('https://youtube.com/@bnmediafilms','_blank')"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/hopealive.jpeg" alt="Hope Alive"><div class="plabel"><span class="ptype">Film</span><span class="ptitle">Hope Alive</span><span class="pwatch">▶ Watch on YouTube</span></div></div>
+      <button class="parr" id="pprev">&#8592;</button>
+      <button class="parr" id="pnext">&#8594;</button>
     </div>
-    <div class="pdots"><button class="pdot active" id="pd0" onclick="pGo(0)"></button><button class="pdot " id="pd1" onclick="pGo(1)"></button><button class="pdot " id="pd2" onclick="pGo(2)"></button><button class="pdot " id="pd3" onclick="pGo(3)"></button><button class="pdot " id="pd4" onclick="pGo(4)"></button></div>
+    <div id="pdots"></div>
   </div>
 </div>
 
-<div class="section" id="contact">
-  <h2 class="section-heading">Contact Us</h2>
-  <div class="contact-grid">
-    <div class="contact-info">
+<!-- CONTACT -->
+<div class="sec" id="contact">
+  <h2 class="sec-heading">Contact Us</h2>
+  <div class="cgrid">
+    <div class="cinfo">
       <h3>Get In Touch</h3><p>We would love to hear from you. Whether you have a question, want to collaborate, or just want to say hello.</p>
-      <h3>Email</h3><p><a href="/cdn-cgi/l/email-protection#51333f3c3435383037383d3c2211363c30383d7f323e3c"><span class="__cf_email__" data-cfemail="d3b1bdbeb6b7bab2b5babfbea093b4beb2babffdb0bcbe">[email&#160;protected]</span></a></p>
-      <h3>Follow Us</h3><p>Stay connected on all our social media platforms for the latest updates and new releases.</p>
+      <h3>Email</h3><p><a href="mailto:bnmediafilms@gmail.com">bnmediafilms@gmail.com</a></p>
+      <h3>Follow Us</h3><p>Stay connected on all our social media platforms for the latest updates.</p>
     </div>
     <div>
-      <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name"/></div>
-      <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
-      <div class="form-group"><label>Subject</label><select><option>General Enquiry</option><option>Collaboration</option><option>Auditions</option><option>Press &amp; Media</option><option>Other</option></select></div>
-      <div class="form-group"><label>Message</label><textarea placeholder="Your message..."></textarea></div>
-      <button class="submit-btn" onclick="this.textContent='Message Sent ✓';this.style.background='#2e7d32';setTimeout(()=>{this.textContent='Send Message';this.style.background=''},3000)">Send Message</button>
+      <div class="fg"><label>Full Name</label><input type="text" placeholder="Your full name"/></div>
+      <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+      <div class="fg"><label>Subject</label><select><option>General Enquiry</option><option>Collaboration</option><option>Auditions</option><option>Press &amp; Media</option><option>Other</option></select></div>
+      <div class="fg"><label>Message</label><textarea placeholder="Your message..."></textarea></div>
+      <button class="sbtn" onclick="this.textContent='Message Sent ✓';this.style.background='#2e7d32';setTimeout(()=>{this.textContent='Send Message';this.style.background=''},3000)">Send Message</button>
     </div>
   </div>
 </div>
 
-<div class="section section-bg" id="faq">
-  <h2 class="section-heading">Frequently Asked Questions</h2>
-  <div class="faq-item"><div class="faq-q">Where can I watch BN Media Films productions?</div><div class="faq-a">All our productions are available to watch for free on our official YouTube channel at youtube.com/@bnmediafilms.</div></div>
-  <div class="faq-item"><div class="faq-q">How can I audition for BN Media Films?</div><div class="faq-a">Click on the Auditions page to see current opportunities and fill in the application form. We welcome all experience levels.</div></div>
-  <div class="faq-item"><div class="faq-q">How can I collaborate or partner with BN Media Films?</div><div class="faq-a">Send us an email at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="96f4f8fbf3f2fff7f0fffafbe5d6f1fbf7fffab8f5f9fb">[email&#160;protected]</a> or use the Contact Us form and we will get back to you.</div></div>
-  <div class="faq-item"><div class="faq-q">What kind of stories does BN Media Films tell?</div><div class="faq-a">We focus on teenage and young adult stories covering identity, ambition, love, peer pressure, school life and the realities of growing up.</div></div>
-  <div class="faq-item"><div class="faq-q">How do I stay updated on new productions?</div><div class="faq-a">Follow us on Instagram, TikTok, Facebook and YouTube for the latest updates and new releases.</div></div>
+<!-- FAQ -->
+<div class="sec sec-gray" id="faq">
+  <h2 class="sec-heading">Frequently Asked Questions</h2>
+  <div class="fitem"><div class="fq">Where can I watch BN Media Films productions?</div><div class="fa">All our productions are available for free on our YouTube channel at youtube.com/@bnmediafilms.</div></div>
+  <div class="fitem"><div class="fq">How can I audition for BN Media Films?</div><div class="fa">Click on the Auditions page to see current opportunities. We welcome all experience levels.</div></div>
+  <div class="fitem"><div class="fq">How can I collaborate or partner with BN Media Films?</div><div class="fa">Send us an email at bnmediafilms@gmail.com or use the Contact Us form.</div></div>
+  <div class="fitem"><div class="fq">What kind of stories does BN Media Films tell?</div><div class="fa">We focus on teenage and young adult stories covering identity, ambition, love, peer pressure and school life.</div></div>
+  <div class="fitem"><div class="fq">How do I stay updated on new productions?</div><div class="fa">Follow us on Instagram, TikTok, Facebook and YouTube for the latest updates.</div></div>
 </div>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg" alt="BN Media Films"><p>Telling stories through films &amp; series.</p></div>
-    <div class="footer-links"><h4>Navigate</h4><a href="index.html">Home</a><a href="news.html">News</a><a href="about.html">About</a><a href="auditions.html">Auditions</a><a href="#contact">Contact Us</a><a href="#faq">FAQ</a></div>
-    <div class="footer-links"><h4>Follow Us</h4><a href="https://youtube.com/@bnmediafilms" target="_blank">YouTube</a><a href="https://www.instagram.com/bnmediafilms" target="_blank">Instagram</a><a href="https://www.facebook.com/share/1HaxW1g6MC/" target="_blank">Facebook</a><a href="https://www.tiktok.com/@bnmediafilms" target="_blank">TikTok</a></div>
+  <div class="fi">
+    <div class="fb"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg" alt="BN Media Films"><p>Telling stories through films &amp; series.</p></div>
+    <div class="fl"><h4>Navigate</h4><a href="index.html">Home</a><a href="news.html">News</a><a href="about.html">About</a><a href="auditions.html">Auditions</a><a href="#contact">Contact Us</a><a href="#faq">FAQ</a></div>
+    <div class="fl"><h4>Follow Us</h4><a href="https://youtube.com/@bnmediafilms" target="_blank">YouTube</a><a href="https://www.instagram.com/bnmediafilms" target="_blank">Instagram</a><a href="https://www.facebook.com/share/1HaxW1g6MC/" target="_blank">Facebook</a><a href="https://www.tiktok.com/@bnmediafilms" target="_blank">TikTok</a></div>
   </div>
-  <div class="footer-copy">© 2025 BN Media Films. All Rights Reserved.</div>
+  <div class="fc">© 2025 BN Media Films. All Rights Reserved.</div>
 </footer>
 
-<div id="social-bar">
-  <a href="https://www.facebook.com/share/1HaxW1g6MC/" target="_blank" class="sb-btn sb-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-  <a href="https://www.instagram.com/bnmediafilms" target="_blank" class="sb-btn sb-ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-  <a href="https://youtube.com/@bnmediafilms" target="_blank" class="sb-btn sb-yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg></a>
-  <a href="https://www.tiktok.com/@bnmediafilms" target="_blank" class="sb-btn sb-tk"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg></a>
-  <a href="https://chat.whatsapp.com/Dp6ZRzks9VXHhRn1HTKWLC" target="_blank" class="sb-btn sb-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L.057 23.986l6.305-1.649A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.002-1.371l-.36-.214-3.733.976 1.003-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg></a>
-  <a href="https://www.facebook.com/share/g/1GR8x13tM1/" target="_blank" class="sb-btn sb-fb2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 11H13V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v3H6v4h3v9h4v-9h3z"/></svg></a>
+<div id="sbar">
+  <a href="https://www.facebook.com/share/1HaxW1g6MC/" target="_blank" class="sb sfb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+  <a href="https://www.instagram.com/bnmediafilms" target="_blank" class="sb sig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+  <a href="https://youtube.com/@bnmediafilms" target="_blank" class="sb syt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg></a>
+  <a href="https://www.tiktok.com/@bnmediafilms" target="_blank" class="sb stk"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg></a>
+  <a href="https://chat.whatsapp.com/Dp6ZRzks9VXHhRn1HTKWLC" target="_blank" class="sb swa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L.057 23.986l6.305-1.649A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.002-1.371l-.36-.214-3.733.976 1.003-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg></a>
+  <a href="https://www.facebook.com/share/g/1GR8x13tM1/" target="_blank" class="sb sfb2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 11H13V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v3H6v4h3v9h4v-9h3z"/></svg></a>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// HAMBURGER MENU
-var nav = document.getElementById('mainNav');
-document.getElementById('hamburger').addEventListener('click', function() {
-  nav.classList.toggle('open');
-});
-nav.querySelectorAll('a').forEach(function(a) {
-  a.addEventListener('click', function() { nav.classList.remove('open'); });
-});
+<script>
+// HAMBURGER
+document.getElementById('hamburger').onclick = function() {
+  document.getElementById('mainNav').classList.toggle('open');
+};
 
-// HERO SLIDESHOW
-var hC = 0;
-var hSlides = document.querySelectorAll('.hslide');
-var hDots = document.querySelectorAll('.dot');
-var hN = hSlides.length;
-
-function hGo(n) {
-  hSlides[hC].classList.remove('active');
-  hDots[hC].classList.remove('active');
-  hC = ((n % hN) + hN) % hN;
-  hSlides[hC].classList.add('active');
-  hDots[hC].classList.add('active');
+// HERO
+var hI = 0;
+var hS = document.querySelectorAll('.hslide');
+var hN = hS.length;
+var hDW = document.getElementById('hdots');
+for (var i = 0; i < hN; i++) {
+  var d = document.createElement('button');
+  d.className = 'hdot' + (i === 0 ? ' on' : '');
+  d.setAttribute('data-n', i);
+  d.onclick = function() { hGo(parseInt(this.getAttribute('data-n'))); };
+  hDW.appendChild(d);
 }
-setInterval(function() { hGo(hC + 1); }, 5000);
+hS[0].classList.add('on');
+function hGo(n) {
+  hS[hI].classList.remove('on');
+  document.querySelectorAll('.hdot')[hI].classList.remove('on');
+  hI = (n + hN) % hN;
+  hS[hI].classList.add('on');
+  document.querySelectorAll('.hdot')[hI].classList.add('on');
+}
+document.getElementById('hprev').onclick = function() { hGo(hI - 1); };
+document.getElementById('hnext').onclick = function() { hGo(hI + 1); };
+setInterval(function() { hGo(hI + 1); }, 5000);
 
-// PRODUCTIONS SLIDESHOW
-var pC = 0;
-var pSlides = document.querySelectorAll('.pslide');
-var pDots = document.querySelectorAll('.pdot');
-var pN = pSlides.length;
-
+// PRODUCTIONS
+var pI = 0;
+var pS = document.querySelectorAll('.pslide');
+var pN = pS.length;
+var pDW = document.getElementById('pdots');
+for (var j = 0; j < pN; j++) {
+  var pd = document.createElement('button');
+  pd.className = 'pdot' + (j === 0 ? ' on' : '');
+  pd.setAttribute('data-n', j);
+  pd.onclick = function() { pGo(parseInt(this.getAttribute('data-n'))); };
+  pDW.appendChild(pd);
+}
+pS[0].classList.add('on');
 function pGo(n) {
-  pSlides[pC].classList.remove('active');
-  pDots[pC].classList.remove('ac
+  pS[pI].classList.remove('on');
+  document.querySelectorAll('.pdot')[pI].classList.remove('on');
+  pI = (n + pN) % pN;
+  pS[pI].classList.add('on');
+  document.querySelectorAll('.pdot')[pI].classList.add('on');
+}
+document.getElementById('pprev').onclick = function() { pGo(pI - 1); };
+document.getElementById('pnext').onclick = function() { pGo(pI + 1); };
+setInterval(function() { pGo(pI + 1); }, 4000);
+
+// FAQ
+document.querySelectorAll('.fitem').forEach(function(item) {
+  item.querySelector('.fq').onclick = function() {
+    item.classList.toggle('open');
+  };
+});
+</script>
+</body></html>
