@@ -124,12 +124,10 @@ footer{background:#1a1a2e;padding:40px 5%}
 
 <!-- HERO -->
 <div class="nl-hero">
-  <div class="nl-hero-bg">
-    <div style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts1.jpeg')"></div>
-    <div style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts2.jpeg')"></div>
-    <div style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts3.jpeg')"></div>
+  <div class="nl-hero-img-wrap">
+    <img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/nl-hero.jpeg" alt="BN Media Films Cast" class="nl-hero-img">
+    <div class="nl-hero-overlay"></div>
   </div>
-  <div class="nl-hero-overlay"></div>
   <div class="nl-hero-content">
     <div class="nl-badge">&#127916; BN Media Films Newsletter</div>
     <h1 class="nl-hero-title">Stay <span>Inside</span><br>The Story</h1>
@@ -165,42 +163,32 @@ footer{background:#1a1a2e;padding:40px 5%}
 
   <!-- FORM BOX -->
   <div class="nl-form-box">
-    <div id="formArea">
-      <h2 class="nl-form-title">Join the BN Media Films Family</h2>
+    <h2 class="nl-form-title">Join the BN Media Films Family</h2>
       <p class="nl-form-desc">Subscribe below and never miss a moment. No spam — only the stories that matter.</p>
-      <div class="nl-form" id="nlForm">
-        <div class="nl-fg">
-          <label>First Name</label>
-          <input type="text" id="nlFirstName" placeholder="Your first name"/>
+      <form action="https://bnmediafilms.us1.list-manage.com/subscribe/post?u=6f5a5b65721f85e0db3af1e64&amp;id=7725a671ed&amp;f_id=0031aae1f0" method="post" target="_blank" style="width:100%">
+        <div class="nl-form">
+          <div class="nl-fg">
+            <label>First Name</label>
+            <input type="text" name="FNAME" placeholder="Your first name"/>
+          </div>
+          <div class="nl-fg">
+            <label>Last Name</label>
+            <input type="text" name="LNAME" placeholder="Your last name"/>
+          </div>
+          <div class="nl-fg full">
+            <label>Email Address *</label>
+            <input type="email" name="EMAIL" placeholder="your@email.com" required/>
+          </div>
+          <!-- Mailchimp bot protection -->
+          <div style="position:absolute;left:-5000px" aria-hidden="true">
+            <input type="text" name="b_6f5a5b65721f85e0db3af1e64_7725a671ed" tabindex="-1" value="">
+          </div>
+          <div class="nl-submit">
+            <button type="submit" class="nl-submit-btn">Subscribe Now &#8594;</button>
+          </div>
         </div>
-        <div class="nl-fg">
-          <label>Last Name</label>
-          <input type="text" id="nlLastName" placeholder="Your last name"/>
-        </div>
-        <div class="nl-fg full">
-          <label>Email Address</label>
-          <input type="email" id="nlEmail" placeholder="your@email.com"/>
-        </div>
-        <div class="nl-fg full">
-          <label>I want to hear about</label>
-          <select id="nlInterest">
-            <option value="all">Everything — Episodes, Auditions &amp; News</option>
-            <option value="episodes">New Episodes Only</option>
-            <option value="auditions">Audition Calls Only</option>
-            <option value="news">General News &amp; Updates</option>
-          </select>
-        </div>
-        <div class="nl-submit">
-          <button class="nl-submit-btn" onclick="submitNewsletter()">Subscribe Now &#8594;</button>
-        </div>
-      </div>
+      </form>
       <p class="nl-privacy">&#128274; We respect your privacy. Unsubscribe anytime.</p>
-    </div>
-    <div class="nl-success" id="successMsg">
-      <div class="nl-success-icon">&#127881;</div>
-      <div class="nl-success-title">You're In!</div>
-      <p class="nl-success-msg">Welcome to the BN Media Films family!<br>Check your email to confirm your subscription.<br>Get ready for stories, secrets and so much more.</p>
-    </div>
   </div>
 
   <!-- SOCIAL STRIP -->
@@ -252,43 +240,6 @@ document.getElementById('hamburger').onclick = function() {
   document.getElementById('mainNav').classList.toggle('open');
 };
 
-// NEWSLETTER FORM
-function submitNewsletter() {
-  var firstName = document.getElementById('nlFirstName').value.trim();
-  var email = document.getElementById('nlEmail').value.trim();
-
-  if (!firstName) {
-    alert('Please enter your first name.');
-    return;
-  }
-  if (!email || !email.includes('@')) {
-    alert('Please enter a valid email address.');
-    return;
-  }
-
-  // Send to Formspree
-  var data = {
-    firstName: firstName,
-    lastName: document.getElementById('nlLastName').value.trim(),
-    email: email,
-    interest: document.getElementById('nlInterest').value,
-    _subject: 'New Newsletter Subscriber - BN Media Films'
-  };
-
-  fetch('https://formspree.io/f/xaqdgbny', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-    body: JSON.stringify(data)
-  })
-  .then(function() {
-    document.getElementById('formArea').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  })
-  .catch(function() {
-    // Show success anyway - email captured
-    document.getElementById('formArea').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  });
-}
+// Mailchimp handles form submission
 </script>
 </body></html>
