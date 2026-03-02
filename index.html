@@ -274,3 +274,13 @@ function pGo(n) {
   pDW.children[pI].classList.add('on');
 }
 pGo(0);
+document.getElementById('pprev').onclick = function() { pGo(pI - 1); };
+document.getElementById('pnext').onclick = function() { pGo(pI + 1); };
+setInterval(function() { pGo(pI + 1); }, 4000);
+
+// FAQ
+document.querySelectorAll('.fitem').forEach(function(item) {
+  item.querySelector('.fq').onclick = function() { item.classList.toggle('open'); };
+});
+</script>
+</body></html>
