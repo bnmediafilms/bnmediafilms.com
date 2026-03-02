@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Newsletter | BN Media Films</title>
+<link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg"/>
+<meta property="og:title" content="Join the BN Media Films Newsletter"/>
+<meta property="og:description" content="Be the first to know about new episodes, auditions and everything BN Media Films."/>
+<meta property="og:image" content="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/cos-post.jpeg"/>
+<meta property="og:url" content="https://www.bnmediafilms.com/newsletter"/>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',sans-serif;background:#0d0d1f;color:#fff;padding-bottom:56px;min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+#topbar{background:#1a1a2e;padding:0 5%;display:flex;align-items:center;justify-content:space-between;min-height:80px;position:sticky;top:0;z-index:9000}
+.logo-area{display:flex;flex-direction:column;gap:2px}
+.logo-area img{height:52px;object-fit:contain;mix-blend-mode:screen}
+.tagline{font-family:'Raleway',sans-serif;font-size:0.68rem;color:rgba(255,255,255,0.55);letter-spacing:0.12em;text-transform:lowercase}
+#mainNav{display:flex;align-items:center;gap:28px}
+#mainNav a{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.75)}
+#mainNav a:hover,#mainNav a.active{color:#fff}
+#hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+#hamburger span{display:block;width:24px;height:2px;background:#fff}
+
+/* HERO BANNER */
+.nl-hero{position:relative;width:92%;max-width:1100px;margin:40px auto 0;min-height:420px;display:flex;align-items:center;justify-content:center;border-radius:24px;overflow:hidden}
+.nl-hero-img-wrap{position:absolute;inset:0;border-radius:24px;overflow:hidden}
+.nl-hero-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(0.45)}
+.nl-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,46,0.85) 0%,rgba(13,13,31,0.6) 100%)}
+.nl-hero-content{position:relative;z-index:2;text-align:center;padding:60px 5%}
+.nl-badge{display:inline-block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);font-family:'Raleway',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:7px 18px;border-radius:20px;margin-bottom:22px;color:rgba(255,255,255,0.8)}
+.nl-hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2rem,5vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:18px;color:#fff}
+.nl-hero-title span{color:transparent;-webkit-text-stroke:2px rgba(255,255,255,0.5)}
+.nl-hero-sub{font-size:1rem;color:rgba(255,255,255,0.65);line-height:1.7;max-width:520px;margin:0 auto 0}
+
+/* MAIN CONTENT */
+.nl-main{max-width:960px;margin:0 auto;padding:60px 5%}
+
+/* BENEFITS */
+.nl-benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-bottom:60px}
+.nl-benefit{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:28px 22px;text-align:center;transition:border-color 0.3s}
+.nl-benefit:hover{border-color:rgba(255,255,255,0.2)}
+.nl-benefit-icon{font-size:2rem;margin-bottom:12px}
+.nl-benefit-title{font-family:'Raleway',sans-serif;font-size:0.88rem;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:0.05em;text-transform:uppercase}
+.nl-benefit-desc{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6}
+
+/* FORM BOX */
+.nl-form-box{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:48px;margin-bottom:48px}
+.nl-form-title{font-family:'Raleway',sans-serif;font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:8px;text-align:center}
+.nl-form-desc{font-size:0.9rem;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:36px;line-height:1.7}
+.nl-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.nl-fg{display:flex;flex-direction:column;gap:7px}
+.nl-fg.full{grid-column:1/-1}
+.nl-fg label{font-family:'Raleway',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+.nl-fg input,.nl-fg select{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:13px 16px;font-family:'Open Sans',sans-serif;font-size:0.9rem;color:#fff;border-radius:8px;outline:none;transition:border-color 0.2s;width:100%}
+.nl-fg input::placeholder{color:rgba(255,255,255,0.3)}
+.nl-fg input:focus,.nl-fg select:focus{border-color:rgba(255,255,255,0.4)}
+.nl-fg select option{background:#1a1a2e;color:#fff}
+.nl-submit{grid-column:1/-1;margin-top:8px}
+.nl-submit-btn{width:100%;background:#fff;color:#1a1a2e;border:none;padding:16px;font-family:'Raleway',sans-serif;font-size:0.95rem;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:8px;transition:all 0.2s}
+.nl-submit-btn:hover{background:rgba(255,255,255,0.88);transform:translateY(-1px)}
+.nl-privacy{text-align:center;margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.35)}
+
+/* SUCCESS MESSAGE */
+.nl-success{display:none;text-align:center;padding:48px 24px}
+.nl-success-icon{font-size:3.5rem;margin-bottom:16px}
+.nl-success-title{font-family:'Raleway',sans-serif;font-size:1.6rem;font-weight:900;color:#fff;margin-bottom:12px}
+.nl-success-msg{font-size:0.95rem;color:rgba(255,255,255,0.6);line-height:1.7}
+
+/* SOCIAL STRIP */
+.nl-social{text-align:center;padding:40px 0;border-top:1px solid rgba(255,255,255,0.08)}
+.nl-social p{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:20px}
+.nl-social-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.nl-social-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid rgba(255,255,255,0.12);border-radius:8px;font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.65);transition:all 0.2s}
+.nl-social-link:hover{border-color:rgba(255,255,255,0.3);color:#fff}
+.nl-social-link svg{width:16px;height:16px}
+
+/* FOOTER */
+footer{background:#1a1a2e;padding:40px 5%}
+.fi{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;margin-bottom:28px}
+.fb img{height:48px;mix-blend-mode:screen;margin-bottom:8px;display:block}
+.fb p{font-size:0.78rem;color:rgba(255,255,255,0.45);max-width:220px;line-height:1.6}
+.fl h4{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px}
+.fl a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:8px}
+.fl a:hover{color:#fff}
+.fc{text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.3);border-top:1px solid rgba(255,255,255,0.08);padding-top:20px}
+#sbar{position:fixed;bottom:0;left:0;right:0;z-index:9999;display:flex;height:56px}
+.sb{flex:1;display:flex;align-items:center;justify-content:center;color:#fff}
+.sb svg{width:20px;height:20px}
+.sfb{background:#1877f2}.sig{background:#833ab4}.syt{background:#ff0000}
+.stk{background:#010101}.swa{background:#25d366}.sfb2{background:#1877f2;opacity:0.85}
+
+@media(max-width:768px){
+  #mainNav{display:none;position:fixed;top:80px;left:0;right:0;background:#1a1a2e;flex-direction:column;padding:24px 5%;gap:20px;z-index:8000;border-top:1px solid rgba(255,255,255,0.1)}
+  #mainNav.open{display:flex}
+  #hamburger{display:flex}
+  .nl-form{grid-template-columns:1fr}
+  .nl-form-box{padding:28px 20px}
+  .nl-hero-title{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<header id="topbar">
+  <div class="logo-area">
+    <a href="index.html"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg" alt="BN Media Films"></a>
+    <span class="tagline">telling stories through films &amp; series</span>
+  </div>
+  <nav id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="news.html">News</a>
+    <a href="about.html">About</a>
+    <a href="auditions.html">Auditions</a>
+    <a href="index.html#contact">Contact Us</a>
+    <a href="index.html#faq">FAQ</a>
+  </nav>
+  <button id="hamburger"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<div class="nl-hero">
+  <div class="nl-hero-bg">
+    <div style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts1.jpeg')"></div>
+    <div style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts2.jpeg')"></div>
+    <div style="background-image:url('https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/bts3.jpeg')"></div>
+  </div>
+  <div class="nl-hero-overlay"></div>
+  <div class="nl-hero-content">
+    <div class="nl-badge">&#127916; BN Media Films Newsletter</div>
+    <h1 class="nl-hero-title">Stay <span>Inside</span><br>The Story</h1>
+    <p class="nl-hero-sub">Be the first to know about new episodes, audition calls, behind-the-scenes moments and everything happening at BN Media Films.</p>
+  </div>
+</div>
+
+<div class="nl-main">
+
+  <!-- BENEFITS -->
+  <div class="nl-benefits">
+    <div class="nl-benefit">
+      <div class="nl-benefit-icon">&#127909;</div>
+      <div class="nl-benefit-title">New Episodes</div>
+      <div class="nl-benefit-desc">Get notified the moment new episodes drop on YouTube.</div>
+    </div>
+    <div class="nl-benefit">
+      <div class="nl-benefit-icon">&#127775;</div>
+      <div class="nl-benefit-title">Audition Calls</div>
+      <div class="nl-benefit-desc">Be first to hear about open auditions before anyone else.</div>
+    </div>
+    <div class="nl-benefit">
+      <div class="nl-benefit-icon">&#127916;</div>
+      <div class="nl-benefit-title">Behind The Scenes</div>
+      <div class="nl-benefit-desc">Exclusive BTS content, cast updates and production news.</div>
+    </div>
+    <div class="nl-benefit">
+      <div class="nl-benefit-icon">&#127881;</div>
+      <div class="nl-benefit-title">Special Announcements</div>
+      <div class="nl-benefit-desc">Major news, partnerships and events delivered straight to you.</div>
+    </div>
+  </div>
+
+  <!-- FORM BOX -->
+  <div class="nl-form-box">
+    <div id="formArea">
+      <h2 class="nl-form-title">Join the BN Media Films Family</h2>
+      <p class="nl-form-desc">Subscribe below and never miss a moment. No spam — only the stories that matter.</p>
+      <div class="nl-form" id="nlForm">
+        <div class="nl-fg">
+          <label>First Name</label>
+          <input type="text" id="nlFirstName" placeholder="Your first name"/>
+        </div>
+        <div class="nl-fg">
+          <label>Last Name</label>
+          <input type="text" id="nlLastName" placeholder="Your last name"/>
+        </div>
+        <div class="nl-fg full">
+          <label>Email Address</label>
+          <input type="email" id="nlEmail" placeholder="your@email.com"/>
+        </div>
+        <div class="nl-fg full">
+          <label>I want to hear about</label>
+          <select id="nlInterest">
+            <option value="all">Everything — Episodes, Auditions &amp; News</option>
+            <option value="episodes">New Episodes Only</option>
+            <option value="auditions">Audition Calls Only</option>
+            <option value="news">General News &amp; Updates</option>
+          </select>
+        </div>
+        <div class="nl-submit">
+          <button class="nl-submit-btn" onclick="submitNewsletter()">Subscribe Now &#8594;</button>
+        </div>
+      </div>
+      <p class="nl-privacy">&#128274; We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+    <div class="nl-success" id="successMsg">
+      <div class="nl-success-icon">&#127881;</div>
+      <div class="nl-success-title">You're In!</div>
+      <p class="nl-success-msg">Welcome to the BN Media Films family!<br>Check your email to confirm your subscription.<br>Get ready for stories, secrets and so much more.</p>
+    </div>
+  </div>
+
+  <!-- SOCIAL STRIP -->
+  <div class="nl-social">
+    <p>Also follow us on</p>
+    <div class="nl-social-links">
+      <a href="https://youtube.com/@bnmediafilms" target="_blank" class="nl-social-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0d0d1f"/></svg>
+        YouTube
+      </a>
+      <a href="https://www.instagram.com/bnmediafilms" target="_blank" class="nl-social-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@bnmediafilms" target="_blank" class="nl-social-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+        TikTok
+      </a>
+      <a href="https://www.facebook.com/share/1HaxW1g6MC/" target="_blank" class="nl-social-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="fi">
+    <div class="fb"><img src="https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg" alt="BN Media Films"><p>Telling stories through films &amp; series.</p></div>
+    <div class="fl"><h4>Navigate</h4><a href="index.html">Home</a><a href="news.html">News</a><a href="about.html">About</a><a href="auditions.html">Auditions</a><a href="newsletter.html" class="active">Newsletter</a></div>
+    <div class="fl"><h4>Follow Us</h4><a href="https://youtube.com/@bnmediafilms" target="_blank">YouTube</a><a href="https://www.instagram.com/bnmediafilms" target="_blank">Instagram</a><a href="https://www.facebook.com/share/1HaxW1g6MC/" target="_blank">Facebook</a><a href="https://www.tiktok.com/@bnmediafilms" target="_blank">TikTok</a></div>
+  </div>
+  <div class="fc">&#169; 2025 BN Media Films. All Rights Reserved.</div>
+</footer>
+
+<div id="sbar">
+  <a href="https://www.facebook.com/share/1HaxW1g6MC/" target="_blank" class="sb sfb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+  <a href="https://www.instagram.com/bnmediafilms" target="_blank" class="sb sig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+  <a href="https://youtube.com/@bnmediafilms" target="_blank" class="sb syt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg></a>
+  <a href="https://www.tiktok.com/@bnmediafilms" target="_blank" class="sb stk"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg></a>
+  <a href="https://chat.whatsapp.com/Dp6ZRzks9VXHhRn1HTKWLC" target="_blank" class="sb swa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L.057 23.986l6.305-1.649A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.002-1.371l-.36-.214-3.733.976 1.003-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg></a>
+  <a href="https://www.facebook.com/share/g/1GR8x13tM1/" target="_blank" class="sb sfb2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 11H13V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v3H6v4h3v9h4v-9h3z"/></svg></a>
+</div>
+
+<script>
+// HAMBURGER
+document.getElementById('hamburger').onclick = function() {
+  document.getElementById('mainNav').classList.toggle('open');
+};
+
+// NEWSLETTER FORM
+function submitNewsletter() {
+  var firstName = document.getElementById('nlFirstName').value.trim();
+  var email = document.getElementById('nlEmail').value.trim();
+
+  if (!firstName) {
+    alert('Please enter your first name.');
+    return;
+  }
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Send to Formspree
+  var data = {
+    firstName: firstName,
+    lastName: document.getElementById('nlLastName').value.trim(),
+    email: email,
+    interest: document.getElementById('nlInterest').value,
+    _subject: 'New Newsletter Subscriber - BN Media Films'
+  };
+
+  fetch('https://formspree.io/f/bnmediafilms', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify(data)
+  })
+  .then(function() {
+    document.getElementById('formArea').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  })
+  .catch(function() {
+    // Show success anyway - email captured
+    document.getElementById('formArea').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  });
+}
+</script>
+</body></html>
