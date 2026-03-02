@@ -182,14 +182,17 @@ footer{background:#1a1a2e;padding:40px 5%}
   <div class="cgrid">
     <div class="cinfo">
       <h3>Get In Touch</h3><p>We would love to hear from you. Whether you have a question, want to collaborate, or just want to say hello.</p>
-      <h3>Email</h3><p><a href="/cdn-cgi/l/email-protection#23414d4e46474a42454a4f4e5063444e424a4f0d404c4e"><span class="__cf_email__" data-cfemail="c0a2aeada5a4a9a1a6a9acadb380a7ada1a9aceea3afad">[email&#160;protected]</span></a></p>
+
     </div>
     <div>
-      <div class="fg"><label>Full Name</label><input type="text" placeholder="Your full name"/></div>
-      <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
-      <div class="fg"><label>Subject</label><select><option>General Enquiry</option><option>Collaboration</option><option>Auditions</option><option>Press &amp; Media</option><option>Other</option></select></div>
-      <div class="fg"><label>Message</label><textarea placeholder="Your message..."></textarea></div>
-      <button class="sbtn" onclick="this.textContent='Message Sent ✓';this.style.background='#2e7d32';setTimeout(()=>{this.textContent='Send Message';this.style.background=''},3000)">Send Message</button>
+      <form id="contactForm" action="https://formspree.io/f/xaqdgbny" method="POST">
+      <div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your full name" required/></div>
+      <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required/></div>
+      <div class="fg"><label>Subject</label><select name="subject"><option>General Enquiry</option><option>Collaboration</option><option>Auditions</option><option>Press &amp; Media</option><option>Other</option></select></div>
+      <div class="fg"><label>Message</label><textarea name="message" placeholder="Your message..." required></textarea></div>
+      <button type="submit" class="sbtn" id="contactBtn">Send Message</button>
+      </form>
+      <p id="contactSuccess" style="display:none;color:#2e7d32;font-weight:700;margin-top:12px;">&#10003; Message sent! We will get back to you soon.</p>
     </div>
   </div>
 </div>
@@ -282,5 +285,32 @@ setInterval(function() { pGo(pI + 1); }, 4000);
 document.querySelectorAll('.fitem').forEach(function(item) {
   item.querySelector('.fq').onclick = function() { item.classList.toggle('open'); };
 });
+
+// CONTACT FORM
+var cForm = document.getElementById('contactForm');
+if (cForm) {
+  cForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('contactBtn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch('https://formspree.io/f/xaqdgbny', {
+      method: 'POST',
+      headers: {'Accept': 'application/json'},
+      body: new FormData(cForm)
+    }).then(function(r) {
+      if (r.ok) {
+        cForm.style.display = 'none';
+        document.getElementById('contactSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Try Again';
+        btn.disabled = false;
+      }
+    }).catch(function() {
+      btn.textContent = 'Try Again';
+      btn.disabled = false;
+    });
+  });
+}
 </script>
 </body></html>
