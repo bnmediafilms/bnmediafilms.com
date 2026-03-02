@@ -81,7 +81,23 @@ footer{background:#1a1a2e;padding:40px 5%}
 .post-body p+p{margin-top:16px}
 .vids-heading{font-family:'Raleway',sans-serif;font-size:1.1rem;font-weight:800;color:#1a1a2e;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #eee}
 .post-vid{margin-bottom:28px}
-.post-vid-label{font-family:'Raleway',sans-serif;font-size:0.88rem;font-weight:700;color:#1a1a2e;margin-bottom:10px}</style>
+.post-vid-label{font-family:'Raleway',sans-serif;font-size:0.88rem;font-weight:700;color:#1a1a2e;margin-bottom:10px}
+.share-box{margin:40px 0 0;padding:24px 0;border-top:1px solid #eee}
+.share-label{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:14px}
+.share-btns{display:flex;flex-wrap:wrap;gap:10px}
+.share-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;text-decoration:none;border:none;transition:opacity 0.2s}
+.share-btn:hover{opacity:0.85}
+.share-btn svg{width:18px;height:18px;flex-shrink:0}
+.share-btn.wa{background:#25d366;color:#fff}
+.share-btn.fb{background:#1877f2;color:#fff}
+.share-btn.tw{background:#000;color:#fff}
+.share-btn.li{background:#0077b5;color:#fff}
+.share-btn.cp{background:#f0f0f0;color:#1a1a2e}
+@media(max-width:500px){
+  .share-btn span{display:none}
+  .share-btn{padding:10px 14px}
+}
+</style>
 <div class="section" style="max-width:900px;margin:0 auto">
   <a href="news.html" class="post-back">&#8592; Back to News</a>
   <h1 class="post-title">BN Media Films Announces Strategic Partnership with Patmos Studios</h1>
@@ -95,6 +111,32 @@ footer{background:#1a1a2e;padding:40px 5%}
     <p>As part of this partnership, we recently opened auditions for our upcoming web series, <strong>Sure Banker</strong>, which explores the impact of betting and gambling culture in modern society. We were amazed by the overwhelming response, receiving over 3,700 audition entries, demonstrating the immense talent and passion of aspiring actors across Nigeria.</p>
     <p>Through this partnership, BN Media Films and Patmos Studios aim to combine creative storytelling with top-notch production expertise, bringing fresh, engaging content to our growing audience. We are excited about the opportunities this collaboration presents and look forward to sharing more updates on our projects in the coming months.</p>
     <p>Stay connected with us on our blog for the latest news, behind-the-scenes updates, and announcements from BN Media Films.</p>
+  </div>
+</div>
+
+<div class="share-box">
+  <span class="share-label">Share this post</span>
+  <div class="share-btns">
+    <a class="share-btn wa" href="#" onclick="shareWA()" title="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L.057 23.986l6.305-1.649A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.002-1.371l-.36-.214-3.733.976 1.003-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      WhatsApp
+    </a>
+    <a class="share-btn fb" href="#" onclick="shareFB()" title="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      Facebook
+    </a>
+    <a class="share-btn tw" href="#" onclick="shareTW()" title="Twitter / X">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L2.1 2.25h6.944l4.265 5.633L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Twitter
+    </a>
+    <a class="share-btn li" href="#" onclick="shareLI()" title="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <button class="share-btn cp" onclick="copyLink()" id="copyBtn" title="Copy Link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Copy Link
+    </button>
   </div>
 </div>
 <footer>
@@ -114,4 +156,13 @@ footer{background:#1a1a2e;padding:40px 5%}
 </div><script>
 document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mainNav').classList.toggle('open'));
 document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mainNav').classList.remove('open')));
-</script></body></html>
+</script><script>
+var pageURL = 'https://www.bnmediafilms.com/post-partnership';
+var pageTitle = 'BN Media Films Announces Strategic Partnership with Patmos Studios';
+function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(pageTitle+' '+pageURL),'_blank')}
+function shareFB(){window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(pageURL),'_blank')}
+function shareTW(){window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(pageURL)+'&text='+encodeURIComponent(pageTitle),'_blank')}
+function shareLI(){window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(pageURL),'_blank')}
+function copyLink(){navigator.clipboard.writeText(pageURL).then(function(){var b=document.getElementById('copyBtn');b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied!';setTimeout(function(){b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Link'},2000)})}
+</script>
+</body></html>
