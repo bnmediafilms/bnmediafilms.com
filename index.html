@@ -105,56 +105,37 @@ footer{background:#1a1a2e;padding:40px 5%}
 }
 </style>
 
-  <script type="application/ld+json">
-  {
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "BN Media Films",
-    "url": "https://www.bnmediafilms.com/",
-    "description": "BN Media Films is a Nigerian film production company focused on telling teenage and young adult stories through films and series.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.bnmediafilms.com/?s={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
-    "sameAs": [
-      "https://youtube.com/@bnmediafilms",
-      "https://www.instagram.com/bnmediafilms",
-      "https://www.facebook.com/share/1HaxW1g6MC/",
-      "https://www.tiktok.com/@bnmediafilms"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.bnmediafilms.com/#website",
+        "url": "https://www.bnmediafilms.com/",
+        "name": "BN Media Films",
+        "description": "BN Media Films is a Nigerian film production company focused on telling teenage and young adult stories through films and series.",
+        "publisher": {"@id": "https://www.bnmediafilms.com/#organization"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.bnmediafilms.com/#organization",
+        "name": "BN Media Films",
+        "url": "https://www.bnmediafilms.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg"
+        },
+        "sameAs": [
+          "https://youtube.com/@bnmediafilms",
+          "https://www.instagram.com/bnmediafilms",
+          "https://www.facebook.com/share/1HaxW1g6MC/",
+          "https://www.tiktok.com/@bnmediafilms"
+        ]
+      }
     ]
   }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "BN Media Films",
-    "url": "https://www.bnmediafilms.com/",
-    "logo": "https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg",
-    "sameAs": [
-      "https://youtube.com/@bnmediafilms",
-      "https://www.instagram.com/bnmediafilms",
-      "https://www.facebook.com/share/1HaxW1g6MC/",
-      "https://www.tiktok.com/@bnmediafilms"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "BN Media Films",
-    "description": "BN Media Films is a Nigerian film production company focused on telling teenage and young adult stories through films and series.",
-    "url": "https://www.bnmediafilms.com/",
-    "publisher": {
-      "@type": "Organization",
-      "name": "BN Media Films",
-      "url": "https://www.bnmediafilms.com/",
-      "logo": "https://raw.githubusercontent.com/bnmediafilms/bnmediafilms.com/main/logo.jpeg"
-    }
-  }
-  </script>
+</script>
 </head>
 <body>
 <header id="topbar">
