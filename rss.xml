@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BN Media Films News</title>
+    <link>https://www.bnmediafilms.com/news</link>
+    <description>Latest news, updates and stories from BN Media Films.</description>
+    <language>en-ng</language>
+    <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0100</lastBuildDate>
+    <atom:link href="https://www.bnmediafilms.com/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Happy International Women's Day from BN Media Films</title>
+      <link>https://www.bnmediafilms.com/post-international-womens-day-2026</link>
+      <description>We celebrate the courage, strength, and resilience of women everywhere and the stories we tell that honour them.</description>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 +0100</pubDate>
+      <guid>https://www.bnmediafilms.com/post-international-womens-day-2026</guid>
+    </item>
+
+    <item>
+      <title>Why Is "Sure Banker" Taking Longer Than Expected?</title>
+      <link>https://www.bnmediafilms.com/post-sure-banker</link>
+      <description>A production update from BN Media Films about the Sure Banker project.</description>
+      <pubDate>Tue, 04 Mar 2026 00:00:00 +0100</pubDate>
+      <guid>https://www.bnmediafilms.com/post-sure-banker</guid>
+    </item>
+
+    <item>
+      <title>Catch Up on Not Perfect Date — Season 1: All Episodes in One Place</title>
+      <link>https://www.bnmediafilms.com/post-not-perfect-date</link>
+      <description>Watch all 15 episodes of Not Perfect Date Season 1 right here.</description>
+      <pubDate>Mon, 03 Mar 2026 00:00:00 +0100</pubDate>
+      <guid>https://www.bnmediafilms.com/post-not-perfect-date</guid>
+    </item>
+
+    <item>
+      <title>Class of Secrets — All Episodes</title>
+      <link>https://www.bnmediafilms.com/post-class-of-secrets</link>
+      <description>Watch all episodes of Class of Secrets by BN Media Films.</description>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0100</pubDate>
+      <guid>https://www.bnmediafilms.com/post-class-of-secrets</guid>
+    </item>
+
+    <item>
+      <title>BN Media Films and Patmos Studios Partnership</title>
+      <link>https://www.bnmediafilms.com/post-partnership</link>
+      <description>BN Media Films announces a partnership with Patmos Studios.</description>
+      <pubDate>Mon, 01 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>https://www.bnmediafilms.com/post-partnership</guid>
+    </item>
+
+  </channel>
+</rss>
